@@ -1,38 +1,60 @@
 package practica6;
-
 public class Coche {
-	String matricula;
-	String atrib;
+	String matricula;			
+	String combustible; 
 	String modelo;
 	String fabricante;
 
 	public Coche() {
 		matricula = "";
-		atrib = "";
+		combustible = "";  
 		modelo = "";
 		fabricante = "";
 	}
 	public Coche(String m, String c, String mo, String f) {
 		matricula = m;
-		atrib = c;
-		modelo = mo; 
+		combustible = c;
+		modelo = mo;
 		fabricante = f;
 	}
-	public String metodo1() {
+	public String AtributosCoche() { 
 		String resultado = "";
-		if (atrib == "Gasolina") {
-			resultado += "El coche con matricula " + matricula + " ";
-			resultado += metodoA(modelo, fabricante);
-		} else if (atrib == "Diesel") {
-			resultado += "El coche con matricula " + matricula + " ";
-			resultado += metodoB(modelo, fabricante);
-		} else if (atrib == "Híbrido") {
-			resultado += "El coche con matricula " + matricula + " ";
-			resultado += metodoC(modelo, fabricante);
-		} else {
-			resultado += "El coche con matricula " + matricula + " ";
+String enunciado = "El coche con matrícula ";           
+		switch (combustible)
+		case "Gasolina":
+			resultado += enunciado + matricula + " ";
+			resultado += ConsumoCocheA("Corsa", "Opel"); 
+			break;
+		case "Diesel":
+			resultado += enunciado + matricula + " ";
+			resultado += ConsumoCocheB("Ibiza", "Seat");
+			break;
+		case "Híbrido":
+			resultado += enunciado + matricula + " ";
+			resultado += ConsumoCocheC("Getz", "Hyundai");
+			break;
+		default:
+			resultado += enunciado + matricula + " ";
 			resultado += "no dispone de información";
+			break;
 		}
 		return resultado;
 	}
+
+	public String ConsumoCocheA(String modelo, String fabricante) 
+	{
+	String resultado = "";
+	resultado = "El " + fabricante + modelo + " gasta 1,337 euros por 									litro";
+	return resultado;
+	}
+	public String ConsumoCocheB(String modelo, String fabricante) 
+	{
+		String resultado = "";
+		resultado = "El " + fabricante + modelo + " gasta 1,052 euros 										por litro";
+		return resultado; 
+	}
+	public String ConsumoCocheC(String modelo, String fabricante) {
+		String resultado = "";
+		resultado = "El " + fabricante + modelo + " no necesita 											combustible";
+		return resultado;
 }
