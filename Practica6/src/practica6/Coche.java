@@ -15,7 +15,7 @@ public class Coche {
 	public Coche(String m, String c, String mo, String f) {
 		matricula = m;
 		atrib = c;
-		modelo = mo;
+		modelo = mo; 
 		fabricante = f;
 	}
 	public String metodo1() {
