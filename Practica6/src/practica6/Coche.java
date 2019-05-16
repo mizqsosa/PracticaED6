@@ -12,14 +12,12 @@ public class Coche {
 		modelo = "";
 		fabricante = "";
 	}
-
 	public Coche(String m, String c, String mo, String f) {
 		matricula = m;
 		atrib = c;
 		modelo = mo;
 		fabricante = f;
 	}
-
 	public String metodo1() {
 		String resultado = "";
 		if (atrib == "Gasolina") {
